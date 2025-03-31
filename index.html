@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>滿築5 顧客問答</title>
+    <title>滿築5 參觀流程與顧客問答</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f5f5f5;
+            background-color: #f9f9f9;
             color: #333;
         }
         h1 {
@@ -18,11 +17,23 @@
             color: #2c3e50;
             margin-bottom: 30px;
         }
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
-        .question-btn {
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 18px;
+            color: #666;
+        }
+        .step-btn, .question-btn {
             display: block;
             width: 100%;
             padding: 15px;
@@ -36,10 +47,10 @@
             text-align: left;
             transition: background-color 0.3s;
         }
-        .question-btn:hover {
+        .step-btn:hover, .question-btn:hover {
             background-color: #2980b9;
         }
-        .answer-content {
+        .step-content, .answer-content {
             display: none;
             padding: 20px;
             background-color: white;
@@ -48,32 +59,135 @@
             margin-bottom: 20px;
             line-height: 1.6;
         }
-        .answer-content h3 {
+        .step-content h3, .answer-content h3 {
             color: #e74c3c;
             margin-top: 0;
         }
-        .answer-content ul {
+        .step-content ul, .answer-content ul {
             padding-left: 20px;
         }
-        .answer-content li {
+        .step-content li, .answer-content li {
             margin-bottom: 10px;
-        }
-        .intro {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 18px;
-            color: #555;
         }
     </style>
 </head>
 <body>
-    <h1>滿築5 顧客問答</h1>
+    <h1>滿築5 參觀流程與顧客問答</h1>
     <div class="intro">
-        歡迎了解「滿築5」！這裡整理了顧客常見問題與專業回應，點擊下方按鈕查看詳情，讓您購屋更安心！
+        歡迎體驗「滿築5」！從參觀流程到常見問題，我們為您完整解析，點擊下方按鈕探索每階段優勢與解答！
     </div>
     <div class="container">
-        <!-- 屋況與品質 -->
-        <button class="question-btn" onclick="toggleAnswer('q1')">房屋會不會有漏水或建材偷工減料的問題？</button>
+        <!-- 參觀流程區塊 -->
+        <h2>參觀流程</h2>
+        <button class="step-btn" onclick="toggleStep('step1')">1. 進入代銷中心</button>
+        <div id="step1" class="step-content">
+            <h3>宜蘭優質地段，生活便利</h3>
+            <ul>
+                <li>位於義成路三段與東山永興路，交通便利，近羅東市區。</li>
+                <li>地理環境優渥，遠離噪音，生活機能完善。</li>
+                <li>自住與投資兼具，迎接您的理想家園。</li>
+            </ul>
+        </div>
+
+        <button class="step-btn" onclick="toggleStep('step2')">2. 公設（停車場、信箱、一樓設施等）</button>
+        <div id="step2" class="step-content">
+            <h3>實用公設，安心生活</h3>
+            <ul>
+                <li>停車場：27汽車+27機車位，戶戶配車位，產權獨立。</li>
+                <li>信箱與一樓設施：每戶專用信箱，搭配CCTV與對講機，安全便利。</li>
+                <li>消防與動線：光電與定溫式警報器，單進單出人車分離，居住無憂。</li>
+            </ul>
+        </div>
+
+        <button class="step-btn" onclick="toggleStep('step3')">3. 梯廳（電梯、樓梯）</button>
+        <div id="step3" class="step-content">
+            <h3>便利梯廳，安全第一</h3>
+            <ul>
+                <li>中川雙拼無機房電梯（8人乘，60m/min），戶數合理分配，平日無壓力。</li>
+                <li>樓梯設計實用，緊急時安全有保障。</li>
+            </ul>
+        </div>
+
+        <button class="step-btn" onclick="toggleStep('step4')">4. 電梯內</button>
+        <div id="step4" class="step-content">
+            <h3>旭生建設，品質保證</h3>
+            <ul>
+                <li>經驗老道的小建商，成本控制合理，質感全面提升。</li>
+                <li>3500psi鋼筋混凝土，專業技師精算，符合法規。</li>
+            </ul>
+        </div>
+
+        <button class="step-btn" onclick="toggleStep('step5')">5. 出電梯至2、3或4樓梯廳</button>
+        <div id="step5" class="step-content">
+            <h3>最適合您的樓層</h3>
+            <ul>
+                <li><strong>二樓</strong>：便利性佳，搬運方便，無需擠電梯。</li>
+                <li><strong>三樓</strong>：採光通風均衡，隱蔽性佳。</li>
+                <li><strong>四樓</strong>：視野開闊，採光通風最佳。</li>
+            </ul>
+        </div>
+
+        <button class="step-btn" onclick="toggleStep('step6')">6. 走廊（照明、樓梯、門外觀）</button>
+        <div id="step6" class="step-content">
+            <h3>細節到位，質感滿分</h3>
+            <ul>
+                <li>走廊照明充足，環境明亮舒適。</li>
+                <li>60A防火鋼板門，外觀高端，安全有保障。</li>
+            </ul>
+        </div>
+
+        <button class="step-btn" onclick="toggleStep('step7')">7. 室內空間（客廳至主臥室）</button>
+        <div id="step7" class="step-content">
+            <h3>實用舒適的兩房設計</h3>
+            <ul>
+                <li><strong>客廳</strong>：採光通風佳，格局方正，空間好規劃。</li>
+                <li><strong>廚房</strong>：三合一通風門，設備高端，實用耐用。</li>
+                <li><strong>陽台</strong>：聖瑪莉諾石英磚，耐候美觀。</li>
+                <li><strong>共用衛浴</strong>：TOTO節能馬桶，乾濕分離，衛生舒適。</li>
+                <li><strong>次臥室</strong>：空間實用，採光充足。</li>
+                <li><strong>主臥室</strong>：寬敞隱私，居住品質佳。</li>
+            </ul>
+        </div>
+
+        <button class="step-btn" onclick="toggleStep('step8')">8. 頂樓室內公設</button>
+        <div id="step8" class="step-content">
+            <h3>大空間公設，實用享受</h3>
+            <ul>
+                <li>頂樓休憩區，空間寬敞，適合住戶放鬆。</li>
+                <li>選材安心，功能實用，提升生活品質。</li>
+            </ul>
+        </div>
+
+        <button class="step-btn" onclick="toggleStep('step9')">9. 室外公設（太陽能板）</button>
+        <div id="step9" class="step-content">
+            <h3>太陽能收益，增值未來</h3>
+            <ul>
+                <li>屋頂太陽能光電系統，20年租賃收益歸管委會，降低管理費。</li>
+                <li>綠能設計，600-700萬價格更具市場競爭力與投資價值。</li>
+            </ul>
+        </div>
+
+        <button class="step-btn" onclick="toggleStep('step10')">10. 回電梯至一樓</button>
+        <div id="step10" class="step-content">
+            <h3>品質與價值兼得</h3>
+            <ul>
+                <li>旭生建設用心打造，品質有保證。</li>
+                <li>600-700萬起價（兩房+車位），市場競爭力強。</li>
+            </ul>
+        </div>
+
+        <button class="step-btn" onclick="toggleStep('step11')">11. 送客</button>
+        <div id="step11" class="step-content">
+            <h3>絕佳投資機會</h3>
+            <ul>
+                <li>羅東市區逼近1000萬的行情，滿築5以600-700萬提供兩房+車位，超值選擇。</li>
+                <li>歡迎預約再訪，您的理想家園等您帶回家！</li>
+            </ul>
+        </div>
+
+        <!-- 顧客問答區塊 -->
+        <h2>顧客問答</h2>
+        <button class="question-btn" onclick="toggleQuestion('q1')">房屋會不會有漏水或建材偷工減料的問題？</button>
         <div id="q1" class="answer-content">
             <h3>我們的回應</h3>
             <ul>
@@ -83,7 +197,7 @@
             </ul>
         </div>
 
-        <button class="question-btn" onclick="toggleAnswer('q2')">停車位或公設會不會是違建？有沒有保證能正常使用？</button>
+        <button class="question-btn" onclick="toggleQuestion('q2')">停車位或公設會不會是違建？有沒有保證能正常使用？</button>
         <div id="q2" class="answer-content">
             <h3>我們的回應</h3>
             <ul>
@@ -92,7 +206,7 @@
             </ul>
         </div>
 
-        <button class="question-btn" onclick="toggleAnswer('q3')">採光、通風和格局會不會有問題？</button>
+        <button class="question-btn" onclick="toggleQuestion('q3')">採光、通風和格局會不會有問題？</button>
         <div id="q3" class="answer-content">
             <h3>我們的回應</h3>
             <ul>
@@ -101,17 +215,16 @@
             </ul>
         </div>
 
-        <!-- 價格與財務 -->
-        <button class="question-btn" onclick="toggleAnswer('q4')">價格合理嗎？自備款和貸款壓力會不會太大？</button>
+        <button class="question-btn" onclick="toggleQuestion('q4')">價格合理嗎？自備款和貸款壓力會不會太大？</button>
         <div id="q4" class="answer-content">
             <h3>我們的回應</h3>
             <ul>
-                <li>滿築5底價1250萬起，參考宜蘭地區時價登錄（附件PDF可查），價格具競爭力，且建材（如太陽能設施）提升長期價值。</li>
-                <li>自備款約3成起（約375萬），旭生建設與指定銀行合作，提供優惠貸款方案，貸款成數高且利率低，您可先試算每月還款額，確保負擔合理。</li>
+                <li>滿築5底價600-700萬，參考宜蘭地區時價登錄（附件PDF可查），價格具競爭力，且建材（如太陽能設施）提升長期價值。</li>
+                <li>自備款約3成起（約180-210萬），旭生建設與指定銀行合作，提供優惠貸款方案，貸款成數高且利率低，您可先試算每月還款額，確保負擔合理。</li>
             </ul>
         </div>
 
-        <button class="question-btn" onclick="toggleAnswer('q5')">稅費和後續費用怎麼算？管理費會不會很高？</button>
+        <button class="question-btn" onclick="toggleQuestion('q5')">稅費和後續費用怎麼算？管理費會不會很高？</button>
         <div id="q5" class="answer-content">
             <h3>我們的回應</h3>
             <ul>
@@ -120,8 +233,7 @@
             </ul>
         </div>
 
-        <!-- 產權與法律 -->
-        <button class="question-btn" onclick="toggleAnswer('q6')">產權清楚嗎？會不會有糾紛？</button>
+        <button class="question-btn" onclick="toggleQuestion('q6')">產權清楚嗎？會不會有糾紛？</button>
         <div id="q6" class="answer-content">
             <h3>我們的回應</h3>
             <ul>
@@ -130,7 +242,7 @@
             </ul>
         </div>
 
-        <button class="question-btn" onclick="toggleAnswer('q7')">合約有沒有陷阱？簽約後能反悔嗎？</button>
+        <button class="question-btn" onclick="toggleQuestion('q7')">合約有沒有陷阱？簽約後能反悔嗎？</button>
         <div id="q7" class="answer-content">
             <h3>我們的回應</h3>
             <ul>
@@ -139,8 +251,7 @@
             </ul>
         </div>
 
-        <!-- 生活機能與環境 -->
-        <button class="question-btn" onclick="toggleAnswer('q8')">周邊環境和生活機能怎麼樣？</button>
+        <button class="question-btn" onclick="toggleQuestion('q8')">周邊環境和生活機能怎麼樣？</button>
         <div id="q8" class="answer-content">
             <h3>我們的回應</h3>
             <ul>
@@ -149,7 +260,7 @@
             </ul>
         </div>
 
-        <button class="question-btn" onclick="toggleAnswer('q9')">電梯夠用嗎？社區管理好不好？</button>
+        <button class="question-btn" onclick="toggleQuestion('q9')">電梯夠用嗎？社區管理好不好？</button>
         <div id="q9" class="answer-content">
             <h3>我們的回應</h3>
             <ul>
@@ -158,8 +269,7 @@
             </ul>
         </div>
 
-        <!-- 驗屋與交屋 -->
-        <button class="question-btn" onclick="toggleAnswer('q10')">驗屋怎麼進行？有問題誰負責？</button>
+        <button class="question-btn" onclick="toggleQuestion('q10')">驗屋怎麼進行？有問題誰負責？</button>
         <div id="q10" class="answer-content">
             <h3>我們的回應</h3>
             <ul>
@@ -167,18 +277,70 @@
                 <li>若有瑕疵，建商依法負責修繕，費用由其承擔，您可保留5%交屋款直到滿意為止。</li>
             </ul>
         </div>
+
+        <button class="question-btn" onclick="toggleQuestion('q11')">隔音好嗎？</button>
+        <div id="q11" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>滿築5選用8mm強化玻璃的九州氣密鋁窗，材質更優，隔音效果佳，確保室內寧靜舒適。</li>
+            </ul>
+        </div>
+
+        <button class="question-btn" onclick="toggleQuestion('q12')">客廳衛浴有乾濕分離，為什麼主臥沒有？</button>
+        <div id="q12" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>主臥衛浴設計以空間利用最大化為考量，清潔更簡單。您可依照需求彈性規劃，增添乾濕分離設施，打造專屬舒適空間。</li>
+            </ul>
+        </div>
+
+        <button class="question-btn" onclick="toggleQuestion('q13')">交屋日何時？</button>
+        <div id="q13" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>具體交屋日期需再與建商確認，目前預計2025年4月初取得使用執照後進行交屋流程，我們會盡快提供最新資訊。</li>
+            </ul>
+        </div>
+
+        <button class="question-btn" onclick="toggleQuestion('q14')">有幾戶？為什麼還沒賣完？</button>
+        <div id="q14" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>滿築5總戶數適中（具體數字待建商確認），建商保留部分戶數作為策略調整。目前釋出的戶數為地主拿出來銷售，價格最具優勢，機會難得。</li>
+            </ul>
+        </div>
+
+        <button class="question-btn" onclick="toggleQuestion('q15')">頂樓會不會很熱？</button>
+        <div id="q15" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>滿築5頂樓設有太陽能板，不僅有效遮擋炙熱陽光，降低室內溫度，還能節省公共電費，讓您住得舒適又省錢。</li>
+            </ul>
+        </div>
     </div>
 
     <script>
-        function toggleAnswer(id) {
-            const answer = document.getElementById(id);
-            if (answer.style.display === "block") {
-                answer.style.display = "none";
+        function toggleStep(id) {
+            const step = document.getElementById(id);
+            if (step.style.display === "block") {
+                step.style.display = "none";
             } else {
-                document.querySelectorAll('.answer-content').forEach(item => {
+                document.querySelectorAll('.step-content, .answer-content').forEach(item => {
                     item.style.display = "none";
                 });
-                answer.style.display = "block";
+                step.style.display = "block";
+            }
+        }
+
+        function toggleQuestion(id) {
+            const question = document.getElementById(id);
+            if (question.style.display === "block") {
+                question.style.display = "none";
+            } else {
+                document.querySelectorAll('.step-content, .answer-content').forEach(item => {
+                    item.style.display = "none";
+                });
+                question.style.display = "block";
             }
         }
     </script>
