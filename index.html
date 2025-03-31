@@ -1,1 +1,186 @@
 
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滿築5 顧客問答</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .question-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        .question-btn:hover {
+            background-color: #2980b9;
+        }
+        .answer-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .answer-content h3 {
+            color: #e74c3c;
+            margin-top: 0;
+        }
+        .answer-content ul {
+            padding-left: 20px;
+        }
+        .answer-content li {
+            margin-bottom: 10px;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>滿築5 顧客問答</h1>
+    <div class="intro">
+        歡迎了解「滿築5」！這裡整理了顧客常見問題與專業回應，點擊下方按鈕查看詳情，讓您購屋更安心！
+    </div>
+    <div class="container">
+        <!-- 屋況與品質 -->
+        <button class="question-btn" onclick="toggleAnswer('q1')">房屋會不會有漏水或建材偷工減料的問題？</button>
+        <div id="q1" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>滿築5採用高品質建材，例如TOTO衛浴、士林電機無熔絲開關與太平洋電線，結構上使用3500psi鋼筋混凝土，由專業技師精算並符合內政部法規，確保耐用與安全。</li>
+                <li>我們提供詳細的建材設備表（已更新版），交屋時可逐一核對品牌與規格。若發現任何瑕疵，根據預售屋定型化契約，您有權保留5%交屋款，直到修繕完成。</li>
+                <li>建議您在驗屋時攜帶合約與建材表，我們也歡迎專業驗屋公司陪同，確保品質無虞。</li>
+            </ul>
+        </div>
+
+        <button class="question-btn" onclick="toggleAnswer('q2')">停車位或公設會不會是違建？有沒有保證能正常使用？</button>
+        <div id="q2" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>滿築5的停車位已明確規劃，使照上是22個汽車位，交屋時調整為27個汽車位+27個機車位，皆有分館協議，產權清楚，不屬於違建或獎勵車位。</li>
+                <li>公設部分以實用為主，例如CCTV監控與對講機系統，無過多休閒設施，降低管理費負擔，並確保長期使用性。相關細節已載明於合約與不動產說明書。</li>
+            </ul>
+        </div>
+
+        <button class="question-btn" onclick="toggleAnswer('q3')">採光、通風和格局會不會有問題？</button>
+        <div id="q3" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>滿築5的設計重視採光與通風，每戶配有九州氣密鋁窗（8mm強化玻璃），浴廁門加設百葉，廚房後門為三合一通風鋁門，確保空氣流通。</li>
+                <li>格局平面圖可於接待中心查看，房間大小經實測可容納雙人床與衣櫃，樑柱外推設計讓室內空間更寬敞。您可現場關燈測試自然光，或開窗感受通風效果。</li>
+            </ul>
+        </div>
+
+        <!-- 價格與財務 -->
+        <button class="question-btn" onclick="toggleAnswer('q4')">價格合理嗎？自備款和貸款壓力會不會太大？</button>
+        <div id="q4" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>滿築5底價1250萬起，參考宜蘭地區時價登錄（附件PDF可查），價格具競爭力，且建材（如太陽能設施）提升長期價值。</li>
+                <li>自備款約3成起（約375萬），旭生建設與指定銀行合作，提供優惠貸款方案，貸款成數高且利率低，您可先試算每月還款額，確保負擔合理。</li>
+            </ul>
+        </div>
+
+        <button class="question-btn" onclick="toggleAnswer('q5')">稅費和後續費用怎麼算？管理費會不會很高？</button>
+        <div id="q5" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>稅費在合約中明確載明，例如契稅由買方負擔，土地增值稅由賣方負責，水電瓦斯接戶費由建商支付，透明無隱藏費用。</li>
+                <li>管理費因公設精簡（無泳池等高維護設施），預估每坪合理範圍，且太陽能租金收益歸管委會，可抵銷部分費用，長期省錢。</li>
+            </ul>
+        </div>
+
+        <!-- 產權與法律 -->
+        <button class="question-btn" onclick="toggleAnswer('q6')">產權清楚嗎？會不會有糾紛？</button>
+        <div id="q6" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>滿築5由旭生建設開發，產權清晰，所有權狀與建物測量成果圖可於交屋前查閱，車位也獨立登記並分配明確，無租賃或查封問題。</li>
+                <li>簽約時由公正代書協助，確保過戶順利，預計4月初使照下來後1個月內完成移轉登記，保障您的權益。</li>
+            </ul>
+        </div>
+
+        <button class="question-btn" onclick="toggleAnswer('q7')">合約有沒有陷阱？簽約後能反悔嗎？</button>
+        <div id="q7" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>滿築5使用內政部版預售屋買賣契約，符合應記載及不得記載事項，您有5天審閱期，期間可無條件退訂，訂金全額退還。</li>
+                <li>結構保固15年，防水與設備保固1-2年（詳見保固書），若交屋後發現瑕疵，可依民法要求修繕或賠償，權益有保障。</li>
+            </ul>
+        </div>
+
+        <!-- 生活機能與環境 -->
+        <button class="question-btn" onclick="toggleAnswer('q8')">周邊環境和生活機能怎麼樣？</button>
+        <div id="q8" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>滿築5位於宜蘭義成路三段與東山永興路附近，鄰近生活機能完善區域，交通便利且遠離主要幹道噪音。</li>
+                <li>棟距設計符合12公尺標準，停車場採單進單出與人車分離規劃，確保出入安全與舒適。</li>
+            </ul>
+        </div>
+
+        <button class="question-btn" onclick="toggleAnswer('q9')">電梯夠用嗎？社區管理好不好？</button>
+        <div id="q9" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>滿築5配置中川雙拼無機房電梯（8人乘，60m/min），每棟戶數控制在合理範圍（具體戶數待確認），平日使用無壓力。</li>
+                <li>物業管理由專業公司負責，初期由旭生建設代管，管理費透明且因太陽能收益補貼，負擔輕鬆。</li>
+            </ul>
+        </div>
+
+        <!-- 驗屋與交屋 -->
+        <button class="question-btn" onclick="toggleAnswer('q10')">驗屋怎麼進行？有問題誰負責？</button>
+        <div id="q10" class="answer-content">
+            <h3>我們的回應</h3>
+            <ul>
+                <li>交屋前您可自行驗屋或委託驗屋公司，我們提供平面圖、水電圖與建材表協助核對。初驗發現問題可記錄於驗收單，建商限期修繕，複驗合格後交屋。</li>
+                <li>若有瑕疵，建商依法負責修繕，費用由其承擔，您可保留5%交屋款直到滿意為止。</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(id) {
+            const answer = document.getElementById(id);
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                document.querySelectorAll('.answer-content').forEach(item => {
+                    item.style.display = "none";
+                });
+                answer.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
